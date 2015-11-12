@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Livestreamer Twitch WebGUI</title>
+    <meta name="description" content="A Livestreamer WebGui">
+    <meta name="author" content="Ante Wall">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body ng-app="livestreamerWebGui">
+    <form ng-controller="MainController">
+        <header>
+            <div ng-if="!process">
+                <h1>Livestreamer Twitch WebGUI</h1>
+                <label for="streamer">Channel name</label>
+                <input type="text" name="streamer" placeholder="day9tv" ng-model="model.stream" required="required" />
+                <label for="streamer">Port</label>
+                <input type="number" name="port" placeholder="1337" ng-model="model.port" required="required" />
+                <button class="btn" ng-click="createNewProcess()">Start</button>
+            </div>
+        </header>
+        <div class="body">
+            <h2>Options</h2>
+            <div ng-repeat="op in options" class="option">
+                <input type="checkbox" />
+                <label>{{ op }}</label>
+            </div>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="/static/scripts.js"></script>
+    <script src="/static/live.js"></script>
+</body>
+
+</html>

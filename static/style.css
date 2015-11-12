@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Roboto Light';
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    padding: 30px 0 0 0;
+    color: #f7f7f7;
+    text-align: center;
+    font-family: 'Roboto Medium';
+}
+
+header {
+    min-height: 300px;
+    background-color: #6441a5;
+    padding: 10px 0
+}
+
+header label {
+    width: 320px;
+    margin: 10px auto;
+    display: block;
+    color: #ccc;
+}
+
+header .btn {
+    background-color: white;
+    color: #464646;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto;
+    display: block;
+    width: 200px;
+    padding: 20px 40px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+header .btn:hover,
+header .btn:focus {
+    background-color: #cecece;
+}
+
+header input {
+    margin: 10px auto;
+    width: 300px;
+    padding: 5px 10px;
+    display: block;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.body {
+    width: 960px;
+    margin: auto;
+}
+
+.body h2 {
+    margin: 10px;
+    text-align: center;
+}
+
+.body .option {
+    margin: 20px;
+    display: inline-block;
+}
+
+.body .option input[type="checkbox"] {}
