@@ -12,8 +12,8 @@
   <![endif]-->
 </head>
 
-<body ng-app="livestreamerWebGui">
-    <form ng-controller="MainController">
+<body ng-app="livestreamerWebGui" ng-controller="MainController">
+    <form >
         <header>
             <div ng-if="!process">
                 <h1>Livestreamer Twitch WebGUI</h1>
@@ -23,18 +23,38 @@
                 <input type="number" name="port" placeholder="1337" ng-model="model.port" required="required" />
                 <button class="btn" ng-click="createNewProcess()">Start</button>
             </div>
+            <div ng-if="process" class="ActiveProcess">
+              <h3>Currently playing</h3> 
+              <h2>{[ process.stream ]}</h2>
+              <h3>Streaming on</h3>
+              <p>{[ serverIP ]}:{[ process.port ]}</p>
+              <button class="btn" ng-click="killProcess()">Stop</button>
+            </div>
         </header>
         <div class="body">
             <h2>Options</h2>
+            {{ options }}
             <div ng-repeat="op in options" class="option">
-                <input type="checkbox" />
-                <label>{{ op }}</label>
+                <input type="checkbox" ng-model="op.checked" />
+                <label>{[ op.option ]} : {[ op.value ]}</label>
             </div>
         </div>
     </form>
+
+    <div class="Channels">
+      <div class="Channel" ng-repeat="channel in channels.streams"
+        ng-click="enterChannelName(channel)">
+        <p>{[ channel.channel.display_name ]}</p>
+        <p class="name">{[ channel.channel.game ]}</p>
+        <img ng-src="{[channel.preview.medium]}" />
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="/static/scripts.js"></script>
-    <script src="/static/live.js"></script>
+    <!--<script src="/static/live.js"></script>-->
 </body>
 
 </html>

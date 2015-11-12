@@ -1,0 +1,19 @@
+{
+  "options": [{
+      "option": "--player-continuous-http",
+      "value": null,
+      "checked": true
+  },{
+      "option": "--player-http",
+      "value": null,
+      "checked": true
+  },{
+      "option": "--player-external-http",
+      "value": null,
+      "checked": true
+  },{
+      "option": "--retry-streams",
+      "value": 60,
+      "checked": true
+  }]
+}
